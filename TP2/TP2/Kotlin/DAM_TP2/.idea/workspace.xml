@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d13a1d98-5f5a-4a78-bb00-a5e66cc3158d" name="Changes" comment="Exer_1 - Método processEvents feito(Passo 4)">
+      <changelist_data name="Priscila" email="priscilaapereira1803@gmail.com" />
+      <change beforePath="$PROJECT_DIR$/../../../../TP1/Trabalho/DAM_TP1 (Kotlin)" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TP1/Trabalho/DAM_TP1 (Kotlin)" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/main" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Priscila &lt;priscilaapereira1803@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="3BR4C5Kgs6D9UIekx59qSi0dKDT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Prescila/OneDrive - Instituto Politécnico de Lisboa/Faculdade/6ºSEMESTRE/DAM (Desenvolvimento de Aplicações Móveis)/Trabalhos Práticos/TP2/TP2/Kotlin/DAM_TP2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Prescila\OneDrive - Instituto Politécnico de Lisboa\Faculdade\6ºSEMESTRE\DAM (Desenvolvimento de Aplicações Móveis)\Trabalhos Práticos\TP2\Trabalho\Kotlin\DAM_TP2\src\main\kotlin\DAM\exer_4" />
+      <recent name="C:\Users\Prescila\OneDrive - Instituto Politécnico de Lisboa\Faculdade\6ºSEMESTRE\DAM (Desenvolvimento de Aplicações Móveis)\Trabalhos Práticos\TP2\Trabalho\Kotlin\DAM_TP2\src\main\kotlin\DAM\exer_3" />
+      <recent name="C:\Users\Prescila\OneDrive - Instituto Politécnico de Lisboa\Faculdade\6ºSEMESTRE\DAM (Desenvolvimento de Aplicações Móveis)\Trabalhos Práticos\TP2\Trabalho\Kotlin\DAM_TP2\src\main\kotlin\DAM\exer_2" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d13a1d98-5f5a-4a78-bb00-a5e66cc3158d" name="Changes" comment="" />
+      <created>1774438424058</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1774438424058</updated>
+      <workItem from="1774438425156" duration="7359000" />
+      <workItem from="1774958145210" duration="672000" />
+      <workItem from="1774960828151" duration="110000" />
+      <workItem from="1775590492069" duration="208000" />
+      <workItem from="1775828503571" duration="1342000" />
+      <workItem from="1775837891821" duration="705000" />
+      <workItem from="1775839417692" duration="73000" />
+    </task>
+    <task id="LOCAL-00001" summary="Foi testado o Main.kt e funcionou sem problemas">
+      <option name="closed" value="true" />
+      <created>1774439791718</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1774439791718</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Ambiente de trabalho inicial configurado">
+      <option name="closed" value="true" />
+      <created>1774440453746</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1774440453746</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Exer_1 - Classes adicionadas (Passo 1)">
+      <option name="closed" value="true" />
+      <created>1774441529286</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1774441529286</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Exer_1 - Método filterByUser feito(Passo 2)">
+      <option name="closed" value="true" />
+      <created>1774443707879</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1774443707879</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Exer_1 - Método totalSpent feito(Passo 3)">
+      <option name="closed" value="true" />
+      <created>1774445196678</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1774445196678</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Exer_1 - Método processEvents feito(Passo 4)">
+      <option name="closed" value="true" />
+      <created>1774446808830</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1774446808830</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../../../.." />
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="Foi testado o Main.kt e funcionou sem problemas" />
+    <MESSAGE value="Ambiente de trabalho inicial configurado" />
+    <MESSAGE value="Exer_1 - Classes adicionadas (Passo 1)" />
+    <MESSAGE value="Exer_1 - Método filterByUser feito(Passo 2)" />
+    <MESSAGE value="Exer_1 - Método totalSpent feito(Passo 3)" />
+    <MESSAGE value="Exer_1 - Método processEvents feito(Passo 4)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exer_1 - Método processEvents feito(Passo 4)" />
+  </component>
+</project>
