@@ -64,6 +64,4 @@ fun main(args: Array<String>) {
 
     println("\nResult:")
     println(pipeline.execute(logs).joinToString(separator = "\n"))
-
-
 }
