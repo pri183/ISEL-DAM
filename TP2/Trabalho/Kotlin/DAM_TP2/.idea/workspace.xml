@@ -47,8 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Prescila/OneDrive - Instituto Politécnico de Lisboa/Faculdade/6ºSEMESTRE/DAM (Desenvolvimento de Aplicações Móveis)/Trabalhos Práticos/TP2/TP2/Kotlin/DAM_TP2",
+    "last_opened_file_path": "C:/Users/Prescila/OneDrive - Instituto Politécnico de Lisboa/Faculdade/6ºSEMESTRE/DAM (Desenvolvimento de Aplicações Móveis)/Trabalhos Práticos",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,6 +78,7 @@
       <workItem from="1775828503571" duration="1342000" />
       <workItem from="1775837891821" duration="705000" />
       <workItem from="1775839417692" duration="73000" />
+      <workItem from="1775846016285" duration="1168000" />
     </task>
     <task id="LOCAL-00001" summary="Foi testado o Main.kt e funcionou sem problemas">
       <option name="closed" value="true" />
