@@ -48,7 +48,7 @@ val pipeline = buildPipeline{
 }
 
 
-fun main(args: Array<String>) {
+fun main() {
 
     val logs = listOf(
         " INFO: server started ",

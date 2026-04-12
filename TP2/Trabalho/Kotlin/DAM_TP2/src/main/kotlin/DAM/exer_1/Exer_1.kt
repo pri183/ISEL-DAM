@@ -33,7 +33,7 @@ fun processEvents(eventos: List<Event>, handler: (Event) -> Unit){
 }
 
 //Passo 5
-fun main(args: Array<String>) {
+fun main() {
 
     //Passo 6
     val events = listOf(
@@ -64,10 +64,6 @@ fun main(args: Array<String>) {
         is Purchase -> println("Purchase(username="+it.username+", amount="+it.amount+", timestamp="+it.timestamp+")")
         is Logout -> println("Logout(username="+it.username+", timestamp="+it.timestamp+")")
     } }
-
-
-
-
 
 }
 

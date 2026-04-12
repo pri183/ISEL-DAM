@@ -59,7 +59,7 @@ class Cache <K :Any, V: Any > (){
 }
 
 
-fun main(args: Array<String>) {
+fun main() {
 
     //Criar os dois caches
     val word_freq_cache = Cache<String, Int>()
@@ -103,28 +103,6 @@ fun main(args: Array<String>) {
     println("After evict id 1, size: "+id_regestry_cache.size()+"") //1
 
     println("Id 1 after evict-> "+id_regestry_cache.get(1)+"") //null
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 
