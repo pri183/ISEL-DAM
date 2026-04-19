@@ -4,4 +4,12 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+<!--    <style name="Theme_Night" parent="Theme.CoolWeatherAPP">-->
+<!--        <item name="android:windowBackground">@drawable/fundo_night_portrait</item>-->
+<!--    </style>-->
+
+<!--    <style name="Theme.Night.Land" parent="Theme.CoolWeatherAPP">-->
+<!--        <item name="android:windowBackground">@drawable/fundo_night_land</item>-->
+<!--    </style>-->
 </resources>

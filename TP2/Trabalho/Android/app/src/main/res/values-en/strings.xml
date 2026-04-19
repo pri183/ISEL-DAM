@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cool Weather APP</string>
+    <string name="tag_latitude">Latitude</string>
+    <string name="tag_longitude">Longitude</string>
+    <string name="tag_sea_level_pressure">Sea Level Pressure</string>
+    <string name="tag_wind_direction">Wind Direction</string>
+    <string name="tag_wind_speed">Wind Speed</string>
+    <string name="tag_temperature">Temperature</string>
+    <string name="tag_time">Time</string>
+    <string name="button_update">UPDATE</string>
+    <string name="input_latitude">38.76</string>
+    <string name="input_longitude">-9.12</string>
+    <string name="res_sea_level_pressure">TextView</string>
+    <string name="res_wind_direction">TextView</string>
+    <string name="res_wind_speed">TextView</string>
+    <string name="res_temperature">TextView</string>
+    <string name="res_time">TextView</string>
+</resources>

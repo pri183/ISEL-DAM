@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+
+
+    <!--Cores Diurnas-->
+    <color name = "jasmine">#F0CB75</color>
+    <color name = "camel">#FFBE64</color>
+    <color name ="oliveWood">#836740</color>
+    <color name ="deepWalnut">#513E1E</color>
+    <color name ="taupe">#44392D</color>
+    <color name = "charcoalBrown">#403C35</color>
+    <color name = "terracotaClay">#B2675e</color>
+
+
+    <!--Cores Noturnas-->
+    <color name = "pacificCyan">#0190A5</color>
+    <color name = "cerulean">#017086</color>
+    <color name = "blueSlate">#446980</color>
+    <color name ="yaleBlue">#1D3D56</color>
+    <color name ="inkBlack">#011422</color>
+
+
+
+
 </resources>

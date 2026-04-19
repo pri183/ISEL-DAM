@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fundo_land"
+    android:theme="@style/Base.Theme.CoolWeatherAPP"
     tools:context=".MainActivity">
 
     <ImageView
