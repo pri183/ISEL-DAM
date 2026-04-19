@@ -3,7 +3,7 @@
 
     <string name="app_name">Cool Weather APP</string>
 
-    <!-- Portugues -->
+
     <!-- Tags de Label-->
     <string name="tag_latitude">Latitude</string>
     <string name="tag_longitude">Longitude</string>
