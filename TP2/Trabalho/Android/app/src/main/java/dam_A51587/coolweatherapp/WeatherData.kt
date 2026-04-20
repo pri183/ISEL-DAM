@@ -12,14 +12,16 @@ data class CurrentWeather (
     var windspeed : Float,
     var winddirection : Int,
     var weathercode : Int,
-    var time : String
+    var time : String,
+    var is_day: Int,
 )
 
 data class Hourly (
     var time: ArrayList<String>,
     var temperature_2m: ArrayList<Float>,
     var weathercode: ArrayList<Int>,
-    var pressure_msl:ArrayList<Double>
+    var pressure_msl:ArrayList<Double>,
+    var windspeed_10m: ArrayList<Float>
 )
 enum class WMO_WeatherCode(var code: Int, var image: String) {
     CLEAR_SKY(0,"clear_"),
@@ -59,5 +61,5 @@ fun getWeatherCodeMap() : Map<Int,WMO_WeatherCode> {
     return weatherMap
 }
 
-//Passo 2
+
 

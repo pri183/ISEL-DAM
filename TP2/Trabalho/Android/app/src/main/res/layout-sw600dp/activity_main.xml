@@ -10,20 +10,20 @@
 
     <ImageView
         android:id="@+id/estadoDia_imageView"
-        android:layout_width="361dp"
-        android:layout_height="420dp"
+        android:layout_width="261dp"
+        android:layout_height="331dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.178"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/clear_day" />
 
     <FrameLayout
         android:id="@+id/menuFrameLayout"
-        android:layout_width="687dp"
-        android:layout_height="676dp"
+        android:layout_width="642dp"
+        android:layout_height="626dp"
         android:background="#A6F7CF72"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
