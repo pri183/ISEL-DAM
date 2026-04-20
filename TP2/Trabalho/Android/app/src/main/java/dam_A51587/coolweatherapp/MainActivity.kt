@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,8 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.widget.addTextChangedListener
+import androidx.core.widget.doOnTextChanged
 import com.google.gson.Gson
 import java.io.InputStreamReader
 import java.net.URL
@@ -24,15 +27,13 @@ import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity() {
 
-    var day: Boolean =true
+    var day: Boolean = true
     val coordenadas_default = Pair(38.76f, -9.12f)
     var coordenadas = coordenadas_default
 
 
-
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
-
 
 
         when (resources.configuration.orientation) {
@@ -61,6 +62,9 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
+        //Configurar os editTexts para caso o utilizador coloque fi
+        config_editTexts();
+
         //Obter valores ao abrir o aplicativo-------------------------
         //Obter latitude e longitude
         coordenadas = obter_latitude_longitude()
@@ -68,6 +72,8 @@ class MainActivity : AppCompatActivity() {
         //Buscar weather e atualizar UI
         //Este if é por causa das datas
         fetchWeatherData(coordenadas.first, coordenadas.second).start()
+
+        mudar_background()
 
 
         //Atribuir função ao botão
@@ -83,7 +89,7 @@ class MainActivity : AppCompatActivity() {
 
             fetchWeatherData(coordenadas.first, coordenadas.second).start()
 
-            recreate()
+
         }
         //-------------------------------------
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.container)) { v, insets ->
@@ -110,7 +116,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     @RequiresApi(Build.VERSION_CODES.O)
     private fun fetchWeatherData(lat: Float, long: Float): Thread {
         return Thread {
@@ -118,7 +123,6 @@ class MainActivity : AppCompatActivity() {
             updateUI(weather)
         }
     }
-
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun updateUI(request: WeatherData) {
@@ -160,9 +164,8 @@ class MainActivity : AppCompatActivity() {
                 request.hourly.time.get(index_dados_atuais)
 
 
-            day = if(request.current_weather.is_day== 1) true else false
-
-
+            day = if (request.current_weather.is_day == 1) true else false
+            mudar_background()
 
 
             //MUDA A IMAGEM DO ESTADO DO DIA DINAMICAMENTE -------------------------------------------
@@ -198,20 +201,15 @@ class MainActivity : AppCompatActivity() {
             val drawable = this.getDrawable(resID)
             //Define a imagem no ImageView
             weatherImage.setImageDrawable(drawable)
-
-
-
-            // TODO ...
         }
     }
-
-    //Função para devolver a latitu e longitude que foi apanhado no input
 
     private fun obter_latitude_longitude(): Pair<Float, Float> {
 
         //Obter editTexts
         val latitude_editText: EditText = findViewById(R.id.latitude_input_editText)
         val longitude_editText: EditText = findViewById(R.id.longitude_input_editText)
+
 
         //Obter inputs
         var latitude: Float = latitude_editText.getText().toString().toFloat()
@@ -223,13 +221,23 @@ class MainActivity : AppCompatActivity() {
 
         //Verificar se os resultados são válidos
         //Latitude [-90, +90] ,  longitude [-90, +90]
-        if ((latitude < -90.00 || latitude > 90.00) || (longitude < -180.00 || longitude > 180.00)) {
-
-            //resultado inválido
-            //Colocar latitude e longitude default
+        if (latitude < -90.00 || latitude > 90.00) {
             latitude = coordenadas_default.first
-            longitude = coordenadas_default.second
+            Toast.makeText(
+                this,
+                "Coordenadas mal introduzidas (latitude = [-90;+90])",
+                Toast.LENGTH_LONG
+            ).show()
         }
+        if (longitude < -180.00 || longitude > 180.00) {
+            longitude = coordenadas_default.second
+            Toast.makeText(
+                this,
+                "Coordenadas mal introduzidas (longitude = [-180;+180])",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+
 
         //Alterar o que está escrito caso necessário
         latitude_editText.setText(latitude.toString())
@@ -239,4 +247,84 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    private fun mudar_background() {
+
+        val container: ConstraintLayout = findViewById(R.id.container)
+
+        when(resources.configuration.screenLayout){
+            Configuration.SCREENLAYOUT_SIZE_LARGE ->{
+
+                when (resources.configuration.orientation) {
+                    Configuration.ORIENTATION_PORTRAIT -> {
+                        if (day) {
+                            container.setBackgroundResource(R.drawable.fundo_portrait_tablet)
+                        } else {
+                            container.setBackgroundResource(R.drawable.fundo_night_portrait_tablet)
+                        }
+                    }
+
+                    Configuration.ORIENTATION_LANDSCAPE -> {
+                        if (day) {
+                            container.setBackgroundResource(R.drawable.fundo_land_tablet)
+                        } else {
+                            container.setBackgroundResource(R.drawable.fundo_night_land_tablet)
+                        }
+                    }
+                }
+            }
+
+            else ->{
+
+                when (resources.configuration.orientation) {
+                    Configuration.ORIENTATION_PORTRAIT -> {
+                        if (day) {
+                            container.setBackgroundResource(R.drawable.fundo_portrait)
+                        } else {
+                            container.setBackgroundResource(R.drawable.fundo_night_portrait)
+                        }
+                    }
+
+                    Configuration.ORIENTATION_LANDSCAPE -> {
+                        if (day) {
+                            container.setBackgroundResource(R.drawable.fundo_land)
+                        } else {
+                            container.setBackgroundResource(R.drawable.fundo_night_land)
+                        }
+                    }
+                }
+
+            }
+        }
+
+
+    }
+
+    private fun config_editTexts() {
+
+        //Obter editTexts
+        val latitude_editText: EditText = findViewById(R.id.latitude_input_editText)
+        val longitude_editText: EditText = findViewById(R.id.longitude_input_editText)
+
+        latitude_editText.addTextChangedListener {
+            if (it?.contains(",") == true) {
+
+                Toast.makeText(this, "Evite virgulas. Use pontos.", Toast.LENGTH_LONG).show()
+                val novoTexto = it.toString().replace(",", ".")
+                latitude_editText.setText(novoTexto)
+
+            }
+
+        }
+
+        longitude_editText.addTextChangedListener {
+            if (it?.contains(",") == true) {
+
+                Toast.makeText(this, "Evite virgulas. Use pontos.", Toast.LENGTH_LONG).show()
+                val novoTexto = it.toString().replace(",", ".")
+                longitude_editText.setText(novoTexto)
+
+            }
+        }
+
+    }
 }

@@ -10,28 +10,31 @@
 
     <ImageView
         android:id="@+id/estadoDia_imageView"
-        android:layout_width="470dp"
-        android:layout_height="331dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="278dp"
+        android:layout_height="246dp"
+        android:theme="@style/Base.Theme.CoolWeatherAPP"
+        app:layout_constraintBottom_toTopOf="@+id/update_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/menuFrameLayout"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.344"
+        app:layout_constraintVertical_bias="0.5"
         app:srcCompat="@drawable/clear_day" />
 
     <FrameLayout
         android:id="@+id/menuFrameLayout"
-        android:layout_width="856dp"
-        android:layout_height="552dp"
-        android:background="#A6F7CF72"
+        android:layout_width="657dp"
+        android:layout_height="358dp"
+        android:background="@color/oliveWood"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.598"
-        app:layout_constraintStart_toEndOf="@+id/estadoDia_imageView"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toStartOf="@+id/estadoDia_imageView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
 
         <TableLayout
+            style="@style/Base.Theme.CoolWeatherAPP"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
@@ -40,6 +43,7 @@
             android:stretchColumns="1">
 
             <TableRow
+                style="@style/Base.Theme.CoolWeatherAPP"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp"
@@ -47,60 +51,72 @@
 
                 <TextView
                     android:id="@+id/latitude_textView"
+                    style="@style/Base.Theme.CoolWeatherAPP"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
-                    android:background="#E0A45C"
+                    android:background="@color/jasmine"
                     android:gravity="bottom"
-                    android:text="Latitude"
-                    android:textColor="#070000"
-                    android:textSize="48sp" />
+                    android:text="@string/tag_latitude"
+                    android:textColor="@color/inkBlack"
+                    android:textSize="34sp" />
 
                 <EditText
                     android:id="@+id/latitude_input_editText"
+                    style="@style/Base.Theme.CoolWeatherAPP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#FFFFFF"
+                    android:background="@color/camel"
                     android:ems="10"
+                    android:hint="Ex:-90.0 a 90.0 "
                     android:inputType="text"
-                    android:text="38.76"
-                    android:textSize="48sp"
-                    android:textStyle="bold" />
+                    android:text="@string/input_latitude"
+                    android:textColor="@color/inkBlack"
+                    android:textSize="34sp"
+                    android:textStyle="bold"
+                    tools:inputType="numberDecimal|numberSigned" />
 
             </TableRow>
 
             <TableRow
+                style="@style/Base.Theme.CoolWeatherAPP"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp">
 
                 <TextView
                     android:id="@+id/longitude_textView"
+                    style="@style/Base.Theme.CoolWeatherAPP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:background="#E0A45C"
+                    android:background="@color/jasmine"
                     android:gravity="bottom"
                     android:paddingEnd="2dp"
-                    android:text="Longitude"
-                    android:textColor="#070000"
-                    android:textSize="48sp" />
+                    android:text="@string/tag_longitude"
+                    android:textColor="@color/inkBlack"
+                    android:textSize="34sp" />
 
                 <EditText
                     android:id="@+id/longitude_input_editText"
+                    style="@style/Base.Theme.CoolWeatherAPP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#FFFFFF"
+                    android:background="@color/camel"
                     android:ems="10"
+                    android:hint="Ex:-90.0 a 90.0 "
                     android:inputType="text"
                     android:scrollbarSize="4dp"
-                    android:text="-9.12"
-                    android:textSize="48sp"
-                    android:textStyle="bold" />
+                    android:text="@string/input_longitude"
+                    android:textColor="@color/inkBlack"
+                    android:textSize="34sp"
+                    android:textStyle="bold"
+                    tools:inputType="numberDecimal|numberSigned" />
 
             </TableRow>
 
             <TableRow
+                style="@style/Base.Theme.CoolWeatherAPP"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp"
@@ -108,144 +124,158 @@
 
                 <TextView
                     android:id="@+id/textView24"
+                    style="@style/Base.Theme.CoolWeatherAPP"
                     android:layout_height="wrap_content"
-                    android:background="#E0A45C"
+                    android:background="@color/jasmine"
                     android:breakStrategy="simple"
-                    android:text="Sea Level Pressure"
-                    android:textColor="#070000"
-                    android:textSize="48sp" />
+                    android:text="@string/tag_sea_level_pressure"
+                    android:textColor="@color/inkBlack"
+                    android:textSize="34sp" />
 
                 <TextView
                     android:id="@+id/res_SeaLevelPress_textView"
+                    style="@style/Base.Theme.CoolWeatherAPP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:background="#E0A45C"
+                    android:background="@color/jasmine"
                     android:paddingLeft="3dp"
-                    android:text="TextView"
-                    android:textColor="#070000"
-                    android:textSize="48sp"
+                    android:text="@string/res_sea_level_pressure"
+                    android:textColor="@color/inkBlack"
+                    android:textSize="34sp"
                     android:textStyle="bold" />
 
             </TableRow>
 
             <TableRow
+                style="@style/Base.Theme.CoolWeatherAPP"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp">
 
                 <TextView
                     android:id="@+id/windDirection_textView"
+                    style="@style/Base.Theme.CoolWeatherAPP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:background="#E0A45C"
+                    android:background="@color/jasmine"
                     android:gravity="bottom"
-                    android:text="Wind Direction"
-                    android:textColor="#070000"
-                    android:textSize="48sp" />
+                    android:text="@string/tag_wind_direction"
+                    android:textColor="@color/inkBlack"
+                    android:textSize="34sp" />
 
                 <TextView
                     android:id="@+id/res_windDirection_textView"
+                    style="@style/Base.Theme.CoolWeatherAPP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:background="#E0A45C"
+                    android:background="@color/jasmine"
                     android:gravity="bottom"
                     android:paddingLeft="3dp"
-                    android:text="TextView"
-                    android:textColor="#070000"
-                    android:textSize="48sp"
+                    android:text="@string/res_wind_direction"
+                    android:textColor="@color/inkBlack"
+                    android:textSize="34sp"
                     android:textStyle="bold" />
             </TableRow>
 
             <TableRow
+                style="@style/Base.Theme.CoolWeatherAPP"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp">
 
                 <TextView
                     android:id="@+id/windSpeed_textView"
+                    style="@style/Base.Theme.CoolWeatherAPP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:background="#E0A45C"
+                    android:background="@color/jasmine"
                     android:gravity="bottom"
-                    android:text="Wind Speed"
-                    android:textColor="#070000"
-                    android:textSize="48sp" />
+                    android:text="@string/tag_wind_speed"
+                    android:textColor="@color/inkBlack"
+                    android:textSize="34sp" />
 
                 <TextView
                     android:id="@+id/res_windSpeed_textView"
+                    style="@style/Base.Theme.CoolWeatherAPP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:background="#E0A45C"
+                    android:background="@color/jasmine"
                     android:gravity="bottom"
                     android:paddingLeft="3dp"
-                    android:text="TextView"
-                    android:textColor="#070000"
-                    android:textSize="48sp"
+                    android:text="@string/res_wind_speed"
+                    android:textColor="@color/inkBlack"
+                    android:textSize="34sp"
                     android:textStyle="bold" />
             </TableRow>
 
             <TableRow
+                style="@style/Base.Theme.CoolWeatherAPP"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp">
 
                 <TextView
                     android:id="@+id/temperature_textView"
+                    style="@style/Base.Theme.CoolWeatherAPP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:background="#E0A45C"
+                    android:background="@color/jasmine"
                     android:gravity="bottom"
-                    android:text="Temperature"
-                    android:textColor="#070000"
-                    android:textSize="48sp" />
+                    android:text="@string/tag_temperature"
+                    android:textColor="@color/inkBlack"
+                    android:textSize="34sp" />
 
                 <TextView
                     android:id="@+id/res_temperature_textView"
+                    style="@style/Base.Theme.CoolWeatherAPP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:background="#E0A45C"
+                    android:background="@color/jasmine"
                     android:gravity="bottom"
                     android:paddingLeft="3dp"
-                    android:text="TextView"
-                    android:textColor="#070000"
-                    android:textSize="48sp"
+                    android:text="@string/res_temperature"
+                    android:textColor="@color/inkBlack"
+                    android:textSize="34sp"
                     android:textStyle="bold" />
             </TableRow>
 
             <TableRow
+                style="@style/Base.Theme.CoolWeatherAPP"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp">
 
                 <TextView
                     android:id="@+id/time_textView"
+                    style="@style/Base.Theme.CoolWeatherAPP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:background="#E0A45C"
+                    android:background="@color/jasmine"
                     android:gravity="bottom"
-                    android:text="Time"
-                    android:textColor="#070000"
-                    android:textSize="48sp" />
+                    android:text="@string/tag_time"
+                    android:textColor="@color/inkBlack"
+                    android:textSize="34sp" />
 
                 <TextView
                     android:id="@+id/res_time_textView"
+                    style="@style/Base.Theme.CoolWeatherAPP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:background="#E0A45C"
+                    android:background="@color/jasmine"
                     android:gravity="bottom"
                     android:paddingLeft="3dp"
-                    android:text="TextView"
-                    android:textColor="#070000"
-                    android:textSize="48sp"
+                    android:text="@string/res_time"
+                    android:textColor="@color/inkBlack"
+                    android:textSize="34sp"
                     android:textStyle="bold" />
             </TableRow>
         </TableLayout>
@@ -254,19 +284,20 @@
 
     <Button
         android:id="@+id/update_button"
-        style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Base.Theme.CoolWeatherAPP"
+        android:layout_width="192dp"
+        android:layout_height="77dp"
         android:background="@null"
-        android:backgroundTint="#A66E39"
-        android:text="UPDATE"
-        android:textColorLink="#3F3F09"
-        android:textSize="48sp"
+        android:backgroundTint="@color/camel"
+        android:text="@string/button_update"
+        android:textColor="@color/inkBlack"
+        android:textSize="13sp"
+        android:theme="@style/Base.Theme.CoolWeatherAPP"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/menuFrameLayout"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/menuFrameLayout"
         app:layout_constraintTop_toBottomOf="@+id/estadoDia_imageView"
-        app:layout_constraintVertical_bias="0.331" />
+        app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

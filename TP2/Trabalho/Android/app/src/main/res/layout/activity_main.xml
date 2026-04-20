@@ -74,7 +74,8 @@
                     android:textColor="@color/inkBlack"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    tools:inputType="numberDecimal|numberSigned" />
+                    android:hint = "Ex:-90.0 a 90.0 "
+                    tools:inputType="numberDecimal|numberSigned"/>
 
             </TableRow>
 
@@ -110,7 +111,8 @@
                     android:textColor="@color/inkBlack"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    tools:inputType="numberDecimal|numberSigned" />
+                    android:hint = "Ex:-90.0 a 90.0 "
+                    tools:inputType="numberDecimal|numberSigned"/>
 
             </TableRow>
 
