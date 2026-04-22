@@ -11,8 +11,8 @@
     <string name="tag_temperature">Temperatura</string>
     <string name="tag_time">Hora</string>
     <string name="button_update">ATUALIZAR</string>
-    <string name="input_latitude">38,76</string>
-    <string name="input_longitude">-9,12</string>
+    <string name="input_latitude">38.76</string>
+    <string name="input_longitude">-9.12</string>
     <string name="res_sea_level_pressure">TextView</string>
     <string name="res_wind_direction">TextView</string>
     <string name="res_wind_speed">TextView</string>

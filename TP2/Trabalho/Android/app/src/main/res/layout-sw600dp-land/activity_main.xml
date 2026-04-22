@@ -291,7 +291,7 @@
         android:backgroundTint="@color/camel"
         android:text="@string/button_update"
         android:textColor="@color/inkBlack"
-        android:textSize="13sp"
+        android:textSize="24sp"
         android:theme="@style/Base.Theme.CoolWeatherAPP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

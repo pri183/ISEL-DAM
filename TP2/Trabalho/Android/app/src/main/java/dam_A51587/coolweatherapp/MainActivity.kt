@@ -2,8 +2,10 @@ package dam_A51587.coolweatherapp
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
+
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -23,6 +25,8 @@ import java.io.InputStreamReader
 import java.net.URL
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import java.util.Locale
+import java.util.TimeZone
 
 
 class MainActivity : AppCompatActivity() {
@@ -70,10 +74,8 @@ class MainActivity : AppCompatActivity() {
         coordenadas = obter_latitude_longitude()
 
         //Buscar weather e atualizar UI
-        //Este if é por causa das datas
         fetchWeatherData(coordenadas.first, coordenadas.second).start()
 
-        mudar_background()
 
 
         //Atribuir função ao botão
@@ -81,15 +83,12 @@ class MainActivity : AppCompatActivity() {
 
         button?.setOnClickListener()
         {
-
             //37.566
             //126.9784
             //Obter latitude e longitude
             coordenadas = obter_latitude_longitude()
 
             fetchWeatherData(coordenadas.first, coordenadas.second).start()
-
-
         }
         //-------------------------------------
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.container)) { v, insets ->
@@ -104,6 +103,7 @@ class MainActivity : AppCompatActivity() {
             append("https://api.open-meteo.com/v1/forecast?")
             append("latitude=${lat}&longitude=${long}&")
             append("current_weather=true&")
+            append("timezone=auto&")
             append("hourly=temperature_2m,weathercode,pressure_msl,windspeed_10m")
         }
 
@@ -140,7 +140,8 @@ class MainActivity : AppCompatActivity() {
             val time: TextView = findViewById(R.id.res_time_textView)
 
             //Obter o tempo presente para poder atualizar a previsão
-            val date = LocalDateTime.now() //obtém a data local
+            val timeZone = TimeZone.getTimeZone(request.timezone)
+            val date = LocalDateTime.now(timeZone.toZoneId()) //obtém a data local
             val formatter =
                 DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:00") //para buscar a hora neste tipo "2011-12-03T10:00"
             var text =
@@ -153,7 +154,7 @@ class MainActivity : AppCompatActivity() {
 
             //Trocar o texto para o resultado do resquest feito
             pressure.text =
-                request.hourly.pressure_msl.get(index_dados_atuais).toString() + " hPa"
+                request.hourly.pressure_msl[index_dados_atuais].toString() + " hPa"
             windDirection.text =
                 request.current_weather.winddirection.toString()
             windSpeed.text =
@@ -163,7 +164,7 @@ class MainActivity : AppCompatActivity() {
             time.text =
                 request.hourly.time.get(index_dados_atuais)
 
-
+            //Mudar o background se houver luz do dia ou não
             day = if (request.current_weather.is_day == 1) true else false
             mudar_background()
 
@@ -210,14 +211,13 @@ class MainActivity : AppCompatActivity() {
         val latitude_editText: EditText = findViewById(R.id.latitude_input_editText)
         val longitude_editText: EditText = findViewById(R.id.longitude_input_editText)
 
-
         //Obter inputs
         var latitude: Float = latitude_editText.getText().toString().toFloat()
         var longitude: Float = longitude_editText.getText().toString().toFloat()
 
         //Formatar os inputs
-        latitude = String.format("%.2f", latitude).toFloat()
-        longitude = String.format("%.2f", longitude).toFloat()
+        latitude = String.format(Locale.US,"%.2f", latitude).toFloat()
+        longitude = String.format(Locale.US,"%.2f", longitude).toFloat()
 
         //Verificar se os resultados são válidos
         //Latitude [-90, +90] ,  longitude [-90, +90]
@@ -246,11 +246,11 @@ class MainActivity : AppCompatActivity() {
         return Pair(latitude, longitude)
     }
 
-
     private fun mudar_background() {
 
         val container: ConstraintLayout = findViewById(R.id.container)
 
+        //Verifica o tamanho do ecrã e dps verifica a orientação
         when(resources.configuration.screenLayout){
             Configuration.SCREENLAYOUT_SIZE_LARGE ->{
 
@@ -325,6 +325,5 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
-
     }
 }
