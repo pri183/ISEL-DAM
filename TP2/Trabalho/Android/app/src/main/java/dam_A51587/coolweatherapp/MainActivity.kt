@@ -1,11 +1,9 @@
 package dam_A51587.coolweatherapp
 
-import android.annotation.SuppressLint
 import android.content.res.Configuration
 
 import android.os.Build
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -14,12 +12,10 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.addTextChangedListener
-import androidx.core.widget.doOnTextChanged
 import com.google.gson.Gson
 import java.io.InputStreamReader
 import java.net.URL
@@ -67,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //Configurar os editTexts para caso o utilizador coloque fi
-        config_editTexts();
+        config_editTexts()
 
         //Obter valores ao abrir o aplicativo-------------------------
         //Obter latitude e longitude
@@ -86,6 +82,8 @@ class MainActivity : AppCompatActivity() {
             //37.566
             //126.9784
             //Obter latitude e longitude
+            //21,3069
+            //-157,8583
             coordenadas = obter_latitude_longitude()
 
             fetchWeatherData(coordenadas.first, coordenadas.second).start()
@@ -108,7 +106,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val str = reqString.toString()
-        val url = URL(reqString.toString())
+        val url = URL(str)
 
         url.openStream().use {
             val request = Gson().fromJson(InputStreamReader(it, "UTF-8"), WeatherData::class.java)
@@ -144,7 +142,7 @@ class MainActivity : AppCompatActivity() {
             val date = LocalDateTime.now(timeZone.toZoneId()) //obtém a data local
             val formatter =
                 DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:00") //para buscar a hora neste tipo "2011-12-03T10:00"
-            var text =
+            val text =
                 date.format(formatter) //converte para string com o formato "2011-12-03T10:00"
 
 
@@ -246,6 +244,7 @@ class MainActivity : AppCompatActivity() {
         return Pair(latitude, longitude)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun mudar_background() {
 
         val container: ConstraintLayout = findViewById(R.id.container)
@@ -296,7 +295,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
+//        coordenadas = obter_latitude_longitude()
+//        fetchWeatherData(coordenadas.first, coordenadas.second).start()
     }
 
     private fun config_editTexts() {
