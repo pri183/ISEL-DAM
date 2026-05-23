@@ -1,5 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.9.24"
+    //kotlin("jvm") version "1.9.24"
+    kotlin("jvm") version "2.3.0" //Adicionado por incompatibilidade de funcoes
     application
 }
 
@@ -19,7 +20,8 @@ tasks.test {
 }
 
 kotlin {
-    jvmToolchain(8)
+    //jvmToolchain(8)
+    jvmToolchain(23)
 }
 
 application {

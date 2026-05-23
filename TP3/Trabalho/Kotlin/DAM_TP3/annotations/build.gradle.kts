@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm")
+    kotlin("jvm") version "2.3.0" // adicionado por incompatibilidade de versoes
 }
 group = "org.example"
 version = "1.0-SNAPSHOT"
